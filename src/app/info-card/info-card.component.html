@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row bg-success" *ngIf="data?.toLowercase() === 'Success'">
+        <mat-icon>done</mat-icon>
+        <div class="data-content">
+            <div class="header">{{data}}</div>
+            <div class="message">Migration applied successfully.</div>
+        </div>
+        <mat-icon (click)="sbRef.dismiss()">close</mat-icon>
+    </div>
+    <div class="row bg-success" *ngIf="data?.toLowercase() === 'error'">
+        <mat-icon>done</mat-icon>
+        <div class="data-content">
+            <div class="header">{{data}}</div>
+            <div class="message">Migration applied successfully.</div>
+        </div>
+        <mat-icon (click)="sbRef.dismiss()">close</mat-icon>
+    </div>
+</div>

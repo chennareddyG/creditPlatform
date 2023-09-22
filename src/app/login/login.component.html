@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row m-4">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-center text-dark">Login Form</h2>
+            <div class="card my-5">
+                <form class="card-body cardbody-color p-lg-5" [formGroup]="loginForm">
+                    <div class="form-outline mb-3">
+                        <label for="userName" class="form-label">User Name</label>
+                        <input formControlName="id" type="text" class="form-control" id="userName" required>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" autocomplete="on" formControlName="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <button type="submit" class="btn btn-primary btn-block mb-4"
+                            (click)="loginUser()">Login</button>
+                    </div>
+                    <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
+                        Registered? <a href="#!" routerLink="/signup" class="text-dark fw-bold"> Create an
+                            Account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

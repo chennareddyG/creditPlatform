@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Status</th>
+        <th scope="col">Role</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role}}</td>
+        <td>{{user.isActive}}</td>
+        <td>
+            <button type="submit" *ngIf="user.role != 'admin'"
+            (click)="updateUser(user.id)" class="btn btn-primary btn-sm mr-2">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

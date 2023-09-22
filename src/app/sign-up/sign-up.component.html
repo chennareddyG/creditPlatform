@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+                The Smarter Way to Credit
+            </h1>
+            <p style="color: hsl(217, 10%, 50.8%)">
+                Launch your financial goals with confidence.
+                A platform that offers services for applying 
+                new credit cards with expert guidance.
+            </p>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card">
+                <div class="card-body py-5 px-md-5">
+                    <form [formGroup]="registerForm">
+                        <div class="form-outline mb-3">
+                            <label for="userName" class="form-label">User Name</label>
+                            <input formControlName="id" type="text" class="form-control" id="userName" required>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label for="fullName" class="form-label">Full name</label>
+                            <input type="text" formControlName="name" class="form-control" id="fullName"
+                                required>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" formControlName="email" class="form-control" id="email"
+                                required>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" autocomplete="on" formControlName="password" class="form-control" id="password"
+                                required>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <mat-radio-group formControlName="gender" aria-label="Gender">
+                                <mat-radio-button value="male">Male</mat-radio-button>
+                                <mat-radio-button value="female">Female</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <button type="button" class="btn btn-primary btn-block mb-4"
+                            [disabled]="registerForm.invalid" (click)="registerUser()">Register</button>
+                        </div>
+                        <div class="text-center">
+                            <p>Registered member? <a href="#!" routerLink="/login">LogIn</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

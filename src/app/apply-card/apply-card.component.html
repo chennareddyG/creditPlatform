@@ -1,0 +1,156 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="registerForm" class="border p-3 rounded-3" novalidate>
+                <div class="row">
+                    <div class="form-outline mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" formControlName="fullName">
+                        <div class="form-text text-danger" *ngIf="fullName.errors?.['required'] &&
+                         (fullName.touched || fullName.dirty)">
+                            Name is required
+                        </div>
+                        <div class="form-text text-danger" *ngIf="fullName.errors?.['minLength'] &&
+                         (fullName.touched || fullName.dirty)">
+                            Name should be more than 2 characters
+                        </div>
+                        <div class="form-text text-danger" *ngIf="fullName.errors?.['pattern'] &&
+                         (fullName.touched || fullName.dirty)">
+                            Name should start with alphabet
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" formControlName="email">
+                        <div class="form-text text-danger" *ngIf="email.errors?.['required'] &&
+                         (email.touched || email.dirty)">
+                            email is required
+                        </div>
+                        <div class="form-text text-danger" *ngIf="email.errors?.['minLength'] &&
+                         (email.touched || email.dirty)">
+                            Name should be more than 2 characters
+                        </div>
+                        <div class="form-text text-danger" *ngIf="email.errors?.['pattern'] &&
+                         (email.touched || email.dirty)">
+                            Name should start with alphabet
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-select" id="gender" formControlName="gender">
+                            <option value="" disabled selected>Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="form-text text-danger"
+                            *ngIf="gender.errors?.['required'] && (gender.touched || gender.dirty)">
+                            Gender is required
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="panNumber" class="form-label">PAN Number</label>
+                        <input type="text" class="form-control" id="panNumber" formControlName="panNumber">
+                        <div class="form-text text-danger"
+                            *ngIf="panNumber.errors?.['required'] && (panNumber.touched || panNumber.dirty)">
+                            PAN Number is required
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="panNumber.errors?.['minlength'] && (panNumber.touched || panNumber.dirty)">
+                            PAN Number should be 10 characters long
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="panNumber.errors?.['maxlength'] && (panNumber.touched || panNumber.dirty)">
+                            PAN Number should be 10 characters long
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="mobile" class="form-label">Mobile</label>
+                        <input type="number" class="form-control" id="mobile" formControlName="mobile">
+                        <div class="form-text text-danger"
+                            *ngIf="mobile.errors?.['required'] && (mobile.touched || mobile.dirty)">
+                            Mobile is required
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="mobile.errors?.['pattern'] && (mobile.touched || mobile.dirty)">
+                            Mobile should contain only numbers
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="mobile.errors?.['minlength'] && (mobile.touched || mobile.dirty)">
+                            Mobile should be 10 characters long
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="mobile.errors?.['maxlength'] && (mobile.touched || mobile.dirty)">
+                            Mobile should be 10 characters long
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" formControlName="city">
+                        <div class="form-text text-danger"
+                            *ngIf="city.errors?.['required'] && (city.touched || city.dirty)">
+                            City is required
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="employmentType" class="form-label">Employment Type</label>
+                        <select class="form-select" id="employmentType" formControlName="employmentType">
+                            <option value="" disabled selected>Select gender</option>
+                            <option value="employee">Employee</option>
+                            <option value="selfEmployed">Self Employed</option>
+                        </select>
+                        <div class="form-text text-danger"
+                            *ngIf="employmentType.errors?.['required'] && (employmentType.touched || employmentType.dirty)">
+                            Employment Type is required
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="salary" class="form-label">Salary</label>
+                        <input type="number" class="form-control" id="salary" formControlName="salary">
+                        <div class="form-text text-danger"
+                            *ngIf="salary.errors?.['required'] && (salary.touched || salary.dirty)">
+                            Salary is required
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="company" class="form-label">Company</label>
+                        <input type="text" class="form-control" id="company" formControlName="company">
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="accountType" class="form-label">Account Type</label>
+                        <select class="form-select" id="accountType" formControlName="accountType">
+                            <option value="" disabled selected>Select Account Type</option>
+                            <option value="new">New User</option>
+                            <option value="old">Existing User</option>
+                        </select>
+                        <div class="form-text text-danger"
+                            *ngIf="accountType.errors?.['required'] && (accountType.touched || accountType.dirty)">
+                            Account Type is required
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label for="birthday" class="form-label">Birthday</label>
+                        <input type="date" class="form-control" id="birthday" formControlName="birthday">
+                        <div class="form-text text-danger"
+                            *ngIf="birthday.errors?.['required'] && (birthday.touched || birthday.dirty)">
+                            Birthday is required
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="termsAndConditions">
+                            <input type="checkbox" id="termsAndConditions" formControlName="termsAndConditions"> I agree to the terms and conditions
+                        </label>
+                        <div class="form-text text-danger"
+                            *ngIf="termsAndConditions.errors?.['required'] && (termsAndConditions.touched || termsAndConditions.dirty)">
+                            should accept terms and conditions
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <button type="button" class="btn btn-primary btn-block mb-4"
+                        [disabled]="registerForm.invalid" (click)="registerSubmitted()">Apply</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

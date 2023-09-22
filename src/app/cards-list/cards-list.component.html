@@ -1,0 +1,21 @@
+<div class="container py-2">
+    <div class="row" *ngFor="let card of cardsList; let i = index">
+        <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4 p-3">
+                <img [src]="getImageUrl(i)" class="img-fluid rounded-start" alt="credit card image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">{{card?.name}}</h3>
+                  <ul>
+                    <li *ngFor="let description of card?.description">{{description}}</li>
+                  </ul>
+                  <button type="button" class="btn btn-primary" (click)="registerCard(card.name)">Apply Now</button>
+                  <button type="button" class="btn btn-light">Know More <b>></b></button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

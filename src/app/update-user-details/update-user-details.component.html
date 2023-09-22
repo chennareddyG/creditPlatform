@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="registerForm" class="border p-3 rounded-3" novalidate>
+                <div class="row">
+                    <div class="form-outline mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <select class="form-select" id="role" formControlName="role">
+                            <option value="" disabled selected>Select Role</option>
+                            <option [value]="item.code" *ngFor="let item of roleList">{{item.name}}</option>
+                        </select>
+                        <div class="form-text text-danger"
+                            *ngIf="role.errors?.['required'] && (role.touched || role.dirty)">
+                            Role is required
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="isActive">
+                            <input type="checkbox" id="isActive" formControlName="isActive"> Active
+                        </label>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <button type="button" class="btn btn-primary m-1" [disabled]="registerForm.invalid" (click)="updateUser()">
+                            Update
+                        </button>
+                        <button mat-dialog-close type="button" class="btn btn-secondary m-1">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
